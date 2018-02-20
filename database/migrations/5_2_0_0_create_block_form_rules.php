@@ -13,8 +13,7 @@ class CreateBlockFormRules extends Migration
      */
     public function up()
     {
-        Schema::table('block_form_rules', function (Blueprint $table) {
-            $table->create();
+        Schema::create('block_form_rules', function (Blueprint $table) {
             $table->increments('id');
             $table->string('form_template');
             $table->string('field');

@@ -13,8 +13,7 @@ class CreateMenuItems extends Migration
      */
     public function up()
     {
-        Schema::table('menu_items', function (Blueprint $table) {
-            $table->create();
+        Schema::create('menu_items', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('menu_id');
             $table->string('page_id');

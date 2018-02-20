@@ -13,8 +13,7 @@ class CreatePageBlocksRepeaterData extends Migration
      */
     public function up()
     {
-        Schema::table('page_blocks_repeater_data', function (Blueprint $table) {
-            $table->create();
+        Schema::create('page_blocks_repeater_data', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('row_key');
             $table->integer('block_id');

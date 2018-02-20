@@ -13,8 +13,7 @@ class CreatePagePublishRequests extends Migration
      */
     public function up()
     {
-        Schema::table('page_publish_requests', function (Blueprint $table) {
-            $table->create();
+        Schema::create('page_publish_requests', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('page_version_id');
             $table->enum('status', ['awaiting', 'approved', 'denied', 'cancelled']);

@@ -13,8 +13,7 @@ class CreateBlockCategory extends Migration
      */
     public function up()
     {
-        Schema::table('block_category', function (Blueprint $table) {
-            $table->create();
+        Schema::create('block_category', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->integer('order');

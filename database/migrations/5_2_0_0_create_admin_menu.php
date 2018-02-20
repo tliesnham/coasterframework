@@ -14,8 +14,7 @@ class CreateAdminMenu extends Migration
      */
     public function up()
     {
-        Schema::table('admin_menu', function (Blueprint $table) {
-            $table->create();
+        Schema::create('admin_menu', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('action_id');
             $table->integer('parent');

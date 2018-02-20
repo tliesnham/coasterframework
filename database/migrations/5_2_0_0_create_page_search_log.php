@@ -13,8 +13,7 @@ class CreatePageSearchLog extends Migration
      */
     public function up()
     {
-        Schema::table('page_search_log', function (Blueprint $table) {
-            $table->create();
+        Schema::create('page_search_log', function (Blueprint $table) {
             $table->increments('id');
             $table->string('term');
             $table->integer('count');

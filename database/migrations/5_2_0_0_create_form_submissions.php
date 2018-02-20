@@ -13,8 +13,7 @@ class CreateFormSubmissions extends Migration
      */
     public function up()
     {
-        Schema::table('form_submissions', function (Blueprint $table) {
-            $table->create();
+        Schema::create('form_submissions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('form_block_id');
             $table->integer('from_page_id');

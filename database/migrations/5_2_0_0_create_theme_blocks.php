@@ -13,8 +13,7 @@ class CreateThemeBlocks extends Migration
      */
     public function up()
     {
-        Schema::table('theme_blocks', function (Blueprint $table) {
-            $table->create();
+        Schema::create('theme_blocks', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('theme_id');
             $table->integer('block_id');

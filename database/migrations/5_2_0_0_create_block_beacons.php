@@ -13,8 +13,7 @@ class CreateBlockBeacons extends Migration
      */
     public function up()
     {
-        Schema::table('block_beacons', function (Blueprint $table) {
-            $table->create();
+        Schema::create('block_beacons', function (Blueprint $table) {
             $table->increments('id');
             $table->string('unique_id');
             $table->integer('page_id');

@@ -12,8 +12,7 @@ class CreateThemeTemplates extends Migration
      */
     public function up()
     {
-        Schema::table('theme_templates', function (Blueprint $table) {
-            $table->create();
+        Schema::create('theme_templates', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('theme_id');
             $table->integer('template_id');

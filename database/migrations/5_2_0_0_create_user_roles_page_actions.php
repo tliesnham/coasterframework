@@ -13,8 +13,7 @@ class CreateUserRolesPageActions extends Migration
      */
     public function up()
     {
-        Schema::table('user_roles_page_actions', function (Blueprint $table) {
-            $table->create();
+        Schema::create('user_roles_page_actions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('role_id');
             $table->integer('page_id');

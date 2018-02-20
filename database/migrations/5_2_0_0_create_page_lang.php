@@ -13,8 +13,7 @@ class CreatePageLang extends Migration
      */
     public function up()
     {
-        Schema::table('page_lang', function (Blueprint $table) {
-            $table->create();
+        Schema::create('page_lang', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('page_id');
             $table->integer('language_id');

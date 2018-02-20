@@ -13,8 +13,7 @@ class CreateBlockSelectopts extends Migration
      */
     public function up()
     {
-        Schema::table('block_selectopts', function (Blueprint $table) {
-            $table->create();
+        Schema::create('block_selectopts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('block_id');
             $table->string('option');

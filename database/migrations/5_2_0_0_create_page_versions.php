@@ -13,8 +13,7 @@ class CreatePageVersions extends Migration
      */
     public function up()
     {
-        Schema::table('page_versions', function (Blueprint $table) {
-            $table->create();
+        Schema::create('page_versions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('page_id');
             $table->integer('version_id');

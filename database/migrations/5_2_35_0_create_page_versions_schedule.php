@@ -16,8 +16,7 @@ class CreatePageVersionsSchedule extends Migration
     {
         $date = new Carbon;
 
-        Schema::table('page_versions_schedule', function (Blueprint $table) {
-            $table->create();
+        Schema::create('page_versions_schedule', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('page_version_id');
             $table->timestamp('live_from')->useCurrent();

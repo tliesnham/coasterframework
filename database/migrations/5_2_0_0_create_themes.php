@@ -13,8 +13,7 @@ class CreateThemes extends Migration
      */
     public function up()
     {
-        Schema::table('themes', function (Blueprint $table) {
-            $table->create();
+        Schema::create('themes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('theme');
             $table->timestamps();

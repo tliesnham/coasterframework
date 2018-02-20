@@ -15,8 +15,7 @@ class CreateAdminActions extends Migration
     public function up()
     {
 
-        Schema::table('admin_actions', function (Blueprint $table) {
-            $table->create();
+        Schema::create('admin_actions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('controller_id');
             $table->string('action');

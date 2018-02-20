@@ -14,8 +14,7 @@ class CreateUserRoles extends Migration
      */
     public function up()
     {
-        Schema::table('user_roles', function (Blueprint $table) {
-            $table->create();
+        Schema::create('user_roles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->integer('admin')->default(1);

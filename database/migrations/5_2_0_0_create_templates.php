@@ -13,8 +13,7 @@ class CreateTemplates extends Migration
      */
     public function up()
     {
-        Schema::table('templates', function (Blueprint $table) {
-            $table->create();
+        Schema::create('templates', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('theme_id');
             $table->string('label');

@@ -13,8 +13,7 @@ class CreateBackups extends Migration
      */
     public function up()
     {
-        Schema::table('backups', function (Blueprint $table) {
-            $table->create();
+        Schema::create('backups', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('log_id');
             $table->integer('primary_id');

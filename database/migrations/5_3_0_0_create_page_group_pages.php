@@ -13,8 +13,7 @@ class CreatePageGroupPages extends Migration
      */
     public function up()
     {
-        Schema::table('page_group_pages', function (Blueprint $table) {
-            $table->create();
+        Schema::create('page_group_pages', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('page_id');
             $table->integer('group_id');

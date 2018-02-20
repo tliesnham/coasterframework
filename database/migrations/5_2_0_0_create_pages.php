@@ -13,8 +13,7 @@ class CreatePages extends Migration
      */
     public function up()
     {
-        Schema::table('pages', function (Blueprint $table) {
-            $table->create();
+        Schema::create('pages', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('template')->default(0);
             $table->integer('parent')->default(0);

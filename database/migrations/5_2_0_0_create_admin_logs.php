@@ -14,8 +14,7 @@ class CreateAdminLogs extends Migration
      */
     public function up()
     {
-        Schema::table('admin_logs', function (Blueprint $table) {
-            $table->create();
+        Schema::create('admin_logs', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->string('log');

@@ -15,8 +15,7 @@ class CreateAdminControllers extends Migration
     public function up()
     {
 
-        Schema::table('admin_controllers', function (Blueprint $table) {
-            $table->create();
+        Schema::create('admin_controllers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('controller');
             $table->string('role_name');

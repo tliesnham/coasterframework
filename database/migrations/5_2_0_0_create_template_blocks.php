@@ -13,8 +13,7 @@ class CreateTemplateBlocks extends Migration
      */
     public function up()
     {
-        Schema::table('template_blocks', function (Blueprint $table) {
-            $table->create();
+        Schema::create('template_blocks', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('template_id');
             $table->integer('block_id');

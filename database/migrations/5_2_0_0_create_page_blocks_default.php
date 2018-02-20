@@ -13,8 +13,7 @@ class CreatePageBlocksDefault extends Migration
      */
     public function up()
     {
-        Schema::table('page_blocks_default', function (Blueprint $table) {
-            $table->create();
+        Schema::create('page_blocks_default', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('language_id')->default(1);
             $table->integer('block_id');

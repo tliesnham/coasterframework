@@ -13,8 +13,7 @@ class CreateBlockVideoCache extends Migration
      */
     public function up()
     {
-        Schema::table('block_video_cache', function (Blueprint $table) {
-            $table->create();
+        Schema::create('block_video_cache', function (Blueprint $table) {
             $table->increments('id');
             $table->string('videoId');
             $table->text('videoInfo');

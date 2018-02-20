@@ -13,8 +13,7 @@ class CreatePageGroupAttributes extends Migration
      */
     public function up()
     {
-        Schema::table('page_group_attributes', function (Blueprint $table) {
-            $table->create();
+        Schema::create('page_group_attributes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('group_id');
             $table->integer('item_block_id');
