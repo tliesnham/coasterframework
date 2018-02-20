@@ -15,7 +15,7 @@ class CreateThemes extends Migration
     {
         Schema::create('themes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('theme');
+            $table->string('theme')->unique();
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ class CreateAdminActions extends Migration
 
         Schema::create('admin_actions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('controller_id');
+            $table->integer('controller_id')->unsigned();
             $table->string('action');
             $table->integer('inherit')->default(0);
             $table->integer('edit_based')->default(0);

@@ -15,10 +15,10 @@ class CreateMenuItems extends Migration
     {
         Schema::create('menu_items', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('menu_id');
-            $table->string('page_id');
+            $table->integer('menu_id')->unsigned();
+            $table->integer('page_id')->unsigned();
             $table->integer('order')->default(0);
-            $table->integer('sub_levels')->default(0);
+            $table->integer('sub_levels')->default(0)->unsigned();
             $table->text('custom_name')->nullable();
             $table->timestamps();
         });

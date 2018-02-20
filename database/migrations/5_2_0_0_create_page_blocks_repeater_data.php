@@ -16,7 +16,7 @@ class CreatePageBlocksRepeaterData extends Migration
         Schema::create('page_blocks_repeater_data', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('row_key');
-            $table->integer('block_id');
+            $table->integer('block_id')->unsigned();
             $table->text('content');
             $table->integer('version');
             $table->timestamps();

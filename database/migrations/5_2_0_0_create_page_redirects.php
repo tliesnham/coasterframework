@@ -17,8 +17,8 @@ class CreatePageRedirects extends Migration
             $table->increments('id');
             $table->string('redirect');
             $table->string('to');
-            $table->integer('type')->default(301);
-            $table->integer('force')->default(0);
+            $table->integer('type')->default(301)->unsigned();
+            $table->boolean('force')->default(0);
             $table->timestamps();
         });
     }

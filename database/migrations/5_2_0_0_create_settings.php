@@ -17,10 +17,10 @@ class CreateSettings extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('label');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('value');
-            $table->integer('editable');
-            $table->integer('hidden');
+            $table->boolean('editable');
+            $table->boolean('hidden');
             $table->timestamps();
         });
 

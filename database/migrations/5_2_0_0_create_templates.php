@@ -15,11 +15,11 @@ class CreateTemplates extends Migration
     {
         Schema::create('templates', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('theme_id');
+            $table->integer('theme_id')->unsigned();
             $table->string('label');
-            $table->string('template');
+            $table->string('template')->unique();
             $table->integer('child_template')->default(0);
-            $table->integer('hidden')->default(0);
+            $table->boolean('hidden')->default(0);
             $table->timestamps();
         });
     }

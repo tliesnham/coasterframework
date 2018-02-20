@@ -15,8 +15,8 @@ class CreateTemplateBlocks extends Migration
     {
         Schema::create('template_blocks', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('template_id');
-            $table->integer('block_id');
+            $table->integer('template_id')->unsigned();
+            $table->integer('block_id')->unsigned();
             $table->timestamps();
         });
     }

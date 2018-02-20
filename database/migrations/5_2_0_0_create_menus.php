@@ -16,8 +16,8 @@ class CreateMenus extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->increments('id');
             $table->string('label');
-            $table->string('name');
-            $table->integer('max_sublevel')->default(0);
+            $table->string('name')->unique();
+            $table->integer('max_sublevel')->default(0)->unsigned();
             $table->timestamps();
         });
     }

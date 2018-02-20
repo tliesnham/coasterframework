@@ -16,7 +16,7 @@ class CreateBlockBeacons extends Migration
         Schema::create('block_beacons', function (Blueprint $table) {
             $table->increments('id');
             $table->string('unique_id');
-            $table->integer('page_id');
+            $table->integer('page_id')->unsigned();
             $table->text('url');
             $table->integer('removed')->default(0);
             $table->timestamps();

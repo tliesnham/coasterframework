@@ -16,7 +16,7 @@ class CreatePageSearchLog extends Migration
         Schema::create('page_search_log', function (Blueprint $table) {
             $table->increments('id');
             $table->string('term');
-            $table->integer('count');
+            $table->integer('count')->unsigned();
             $table->timestamps();
         });
     }

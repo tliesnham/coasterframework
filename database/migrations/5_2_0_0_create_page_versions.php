@@ -15,12 +15,12 @@ class CreatePageVersions extends Migration
     {
         Schema::create('page_versions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('page_id');
-            $table->integer('version_id');
+            $table->integer('page_id')->unsigned();
+            $table->integer('version_id')->unsigned();
             $table->string('template');
             $table->string('label')->nullable();
             $table->string('preview_key');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
     }

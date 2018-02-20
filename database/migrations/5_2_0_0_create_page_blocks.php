@@ -15,11 +15,11 @@ class CreatePageBlocks extends Migration
     {
         Schema::create('page_blocks', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('language_id')->default(1);
-            $table->integer('page_id');
-            $table->integer('block_id');
+            $table->integer('language_id')->default(1)->unsigned();
+            $table->integer('page_id')->unsigned();
+            $table->integer('block_id')->unsigned();
             $table->text('content');
-            $table->integer('version');
+            $table->integer('version')->unsigned();
             $table->timestamps();
         });
     }

@@ -15,8 +15,8 @@ class CreateFormSubmissions extends Migration
     {
         Schema::create('form_submissions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('form_block_id');
-            $table->integer('from_page_id');
+            $table->integer('form_block_id')->unsigned();
+            $table->integer('from_page_id')->unsigned();
             $table->text('content');
             $table->integer('sent');
             $table->timestamps();

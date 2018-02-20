@@ -17,8 +17,8 @@ class CreatePageGroup extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('item_name');
-            $table->integer('default_parent');
-            $table->integer('default_template');
+            $table->integer('default_parent')->unsigned();
+            $table->integer('default_template')->unsigned();
             $table->integer('order_by_attribute_id')->nullable();
             $table->string('order_dir')->nullable();
             $table->timestamps();

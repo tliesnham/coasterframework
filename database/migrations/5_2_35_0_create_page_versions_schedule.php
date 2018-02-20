@@ -18,7 +18,7 @@ class CreatePageVersionsSchedule extends Migration
 
         Schema::create('page_versions_schedule', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('page_version_id');
+            $table->integer('page_version_id')->unsigned();
             $table->timestamp('live_from')->useCurrent();
             $table->integer('repeat_in')->default(0);
             $table->string('repeat_in_func')->nullable();

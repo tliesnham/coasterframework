@@ -14,9 +14,9 @@ class CreateThemeTemplates extends Migration
     {
         Schema::create('theme_templates', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('theme_id');
-            $table->integer('template_id');
-            $table->string('label')->nullable();
+            $table->integer('theme_id')->unsigned();
+            $table->integer('template_id')->unsigned();
+            $table->string('label')->nullable()->unique();
             $table->integer('child_template')->nullable();
             $table->integer('hidden')->nullable();
             $table->timestamps();

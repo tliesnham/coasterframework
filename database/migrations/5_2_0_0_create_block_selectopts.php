@@ -15,7 +15,7 @@ class CreateBlockSelectopts extends Migration
     {
         Schema::create('block_selectopts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('block_id');
+            $table->integer('block_id')->unsigned();
             $table->string('option');
             $table->string('value');
             $table->timestamps();

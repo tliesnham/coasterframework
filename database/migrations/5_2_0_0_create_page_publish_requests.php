@@ -17,7 +17,7 @@ class CreatePagePublishRequests extends Migration
             $table->increments('id');
             $table->integer('page_version_id');
             $table->enum('status', ['awaiting', 'approved', 'denied', 'cancelled']);
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->text('note');
             $table->integer('mod_id');
             $table->timestamps();

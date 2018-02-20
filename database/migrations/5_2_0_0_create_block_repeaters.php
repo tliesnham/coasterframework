@@ -15,7 +15,7 @@ class CreateBlockRepeaters extends Migration
     {
         Schema::create('block_repeaters', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('block_id');
+            $table->integer('block_id')->unsigned();
             $table->string('blocks');
             $table->timestamps();
         });

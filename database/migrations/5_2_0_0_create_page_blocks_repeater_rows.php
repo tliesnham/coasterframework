@@ -15,8 +15,8 @@ class CreatePageBlocksRepeaterRows extends Migration
     {
         Schema::create('page_blocks_repeater_rows', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('repeater_id');
-            $table->integer('row_id');
+            $table->integer('repeater_id')->unsigned();
+            $table->integer('row_id')->unsigned();
             $table->timestamps();
         });
 

@@ -16,8 +16,8 @@ class CreateUserRolesActions extends Migration
     {
         Schema::create('user_roles_actions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('role_id');
-            $table->integer('action_id');
+            $table->integer('role_id')->unsigned();
+            $table->integer('action_id')->unsigned();
             $table->timestamps();
         });
 

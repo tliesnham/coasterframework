@@ -15,13 +15,13 @@ class CreateBlocks extends Migration
     {
         Schema::create('blocks', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id');
+            $table->integer('category_id')->unsigned();
             $table->string('label');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('type');
             $table->integer('order')->default(0);
             $table->integer('search_weight')->default(1);
-            $table->integer('active')->default(1);
+            $table->boolean('active')->default(1);
             $table->timestamps();
         });
     }

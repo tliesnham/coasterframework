@@ -15,8 +15,8 @@ class CreateBackups extends Migration
     {
         Schema::create('backups', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('log_id');
-            $table->integer('primary_id');
+            $table->integer('log_id')->unsigned();
+            $table->integer('primary_id')->unsigned();
             $table->string('model');
             $table->mediumText('data');
             $table->timestamps();

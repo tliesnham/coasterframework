@@ -15,11 +15,11 @@ class CreateThemeBlocks extends Migration
     {
         Schema::create('theme_blocks', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('theme_id');
-            $table->integer('block_id');
-            $table->integer('show_in_pages')->default(0);
+            $table->integer('theme_id')->unsigned();
+            $table->integer('block_id')->unsigned();
+            $table->boolean('show_in_pages')->default(0);
             $table->string('exclude_templates')->default(null);
-            $table->integer('show_in_global')->default(1);
+            $table->boolean('show_in_global')->default(1);
             $table->timestamps();
         });
     }

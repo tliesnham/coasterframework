@@ -15,9 +15,9 @@ class CreateUserRolesPageActions extends Migration
     {
         Schema::create('user_roles_page_actions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('role_id');
-            $table->integer('page_id');
-            $table->integer('action_id');
+            $table->integer('role_id')->unsigned();
+            $table->integer('page_id')->unsigned();
+            $table->integer('action_id')->unsigned();
             $table->enum('access', array('allow', 'deny'));
             $table->timestamps();
         });
