@@ -16,7 +16,7 @@ class CreateThemeTemplates extends Migration
             $table->increments('id');
             $table->integer('theme_id')->unsigned();
             $table->integer('template_id')->unsigned();
-            $table->string('label')->nullable()->unique();
+            $table->string('label')->nullable();
             $table->integer('child_template')->nullable();
             $table->integer('hidden')->nullable();
             $table->timestamps();

@@ -24,6 +24,12 @@ class CreateBlocks extends Migration
             $table->boolean('active')->default(1);
             $table->timestamps();
         });
+
+        Schema::table('blocks', function (Blueprint $table) {
+            $table->foreign('category_id')
+                  ->references('id')->on('block_category')
+                  ->onDelete('cascade');
+        });
     }
 
     /**
