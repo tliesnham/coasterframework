@@ -2,6 +2,11 @@
 
 class Schema {
 
+    public static function create($tableName, $cb)
+    {
+        call_user_func($cb, new Blueprint($tableName));
+    }
+
 	public static function table($tableName, $cb)
 	{
         call_user_func($cb, new Blueprint($tableName));
