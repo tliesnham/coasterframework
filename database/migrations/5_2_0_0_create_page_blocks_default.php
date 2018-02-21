@@ -21,6 +21,12 @@ class CreatePageBlocksDefault extends Migration
             $table->integer('version');
             $table->timestamps();
         });
+
+        Schema::table('page_blocks_default', function (Blueprint $table) {
+            $table->foreign('block_id')
+                  ->references('id')->on('blocks')
+                  ->onDelete('cascade');
+        });
     }
 
     /**

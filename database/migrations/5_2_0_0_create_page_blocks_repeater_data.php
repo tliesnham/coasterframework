@@ -15,11 +15,17 @@ class CreatePageBlocksRepeaterData extends Migration
     {
         Schema::create('page_blocks_repeater_data', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('row_key');
+            $table->integer('row_key')->unsigned();
             $table->integer('block_id')->unsigned();
             $table->text('content');
             $table->integer('version');
             $table->timestamps();
+        });
+
+        Schema::table('page_blocks_repeater_data', function (Blueprint $table) {
+            $table->foreign('block_id')
+                  ->references('id')->on('blocks')
+                  ->onDelete('cascade');
         });
 
     }

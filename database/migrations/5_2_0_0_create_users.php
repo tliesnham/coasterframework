@@ -26,6 +26,12 @@ class CreateUsers extends Migration
             $table->text('page_states')->nullable();
             $table->timestamps();
         });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('role_id')
+                  ->references('id')->on('user_roles')
+                  ->onDelete('cascade');
+        });
     }
 
     /**
