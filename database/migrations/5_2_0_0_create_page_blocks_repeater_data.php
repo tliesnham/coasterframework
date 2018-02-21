@@ -18,7 +18,7 @@ class CreatePageBlocksRepeaterData extends Migration
             $table->integer('row_key')->unsigned();
             $table->integer('block_id')->unsigned();
             $table->text('content');
-            $table->integer('version');
+            $table->integer('version')->unsigned();
             $table->timestamps();
         });
 

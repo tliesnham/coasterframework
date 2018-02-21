@@ -20,6 +20,12 @@ class CreatePageBlocksRepeaterRows extends Migration
             $table->timestamps();
         });
 
+        Schema::table('page_blocks_repeater_rows', function (Blueprint $table) {
+            $table->foreign('repeater_id')
+                  ->references('id')->on('block_repeaters')
+                  ->onDelete('cascade');
+        });
+
     }
 
     /**

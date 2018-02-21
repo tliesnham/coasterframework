@@ -16,7 +16,7 @@ class CreateBlockCategory extends Migration
         Schema::create('block_category', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('order');
+            $table->integer('order')->unsigned();
             $table->timestamps();
         });
     }

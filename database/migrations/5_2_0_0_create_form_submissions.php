@@ -18,8 +18,14 @@ class CreateFormSubmissions extends Migration
             $table->integer('form_block_id')->unsigned();
             $table->integer('from_page_id')->unsigned();
             $table->text('content');
-            $table->integer('sent');
+            $table->boolean('sent');
             $table->timestamps();
+        });
+
+        Schema::table('form_submissions', function (Blueprint $table) {
+            $table->foreign('form_block_id')
+                  ->references('id')->on('blocks')
+                  ->onDelete('cascade');
         });
     }
 

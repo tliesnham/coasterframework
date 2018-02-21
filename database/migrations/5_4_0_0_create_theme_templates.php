@@ -17,8 +17,8 @@ class CreateThemeTemplates extends Migration
             $table->integer('theme_id')->unsigned();
             $table->integer('template_id')->unsigned();
             $table->string('label')->nullable();
-            $table->integer('child_template')->nullable();
-            $table->integer('hidden')->nullable();
+            $table->integer('child_template')->nullable()->unsigned();
+            $table->boolean('hidden')->default(0);
             $table->timestamps();
         });
 
@@ -60,7 +60,7 @@ class CreateThemeTemplates extends Migration
      */
     public function down()
     {
-
+        //
     }
 
 }

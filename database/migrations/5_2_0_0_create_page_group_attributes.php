@@ -16,8 +16,8 @@ class CreatePageGroupAttributes extends Migration
         Schema::create('page_group_attributes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('group_id')->unsigned();
-            $table->integer('item_block_id');
-            $table->integer('filter_by_block_id');
+            $table->integer('item_block_id')->unsigned();
+            $table->integer('filter_by_block_id')->unsigned();
             $table->timestamps();
         });
     }

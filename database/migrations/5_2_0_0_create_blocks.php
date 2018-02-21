@@ -19,7 +19,7 @@ class CreateBlocks extends Migration
             $table->string('label');
             $table->string('name')->unique();
             $table->string('type');
-            $table->integer('order')->default(0);
+            $table->integer('order')->default(0)->unsigned();
             $table->integer('search_weight')->default(1);
             $table->boolean('active')->default(1);
             $table->timestamps();

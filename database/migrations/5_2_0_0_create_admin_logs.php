@@ -21,6 +21,14 @@ class CreateAdminLogs extends Migration
             $table->timestamps();
         });
 
+        /*
+        Schema::table('admin_logs', function (Blueprint $table) {
+            $table->foreign('user_id')
+                  ->references('id')->on('users')
+                  ->onDelete('cascade');
+        });
+        */
+
         $date = new Carbon;
 
         DB::table('admin_logs')->insert(

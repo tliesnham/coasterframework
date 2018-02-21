@@ -19,7 +19,7 @@ class CreatePageLang extends Migration
             $table->integer('language_id')->unsigned();
             $table->string('url');
             $table->string('name');
-            $table->integer('live_version');
+            $table->integer('live_version')->unsigned();
             $table->timestamps();
         });
     }

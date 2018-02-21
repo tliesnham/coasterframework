@@ -20,11 +20,18 @@ class CreateAdminActions extends Migration
             $table->integer('controller_id')->unsigned();
             $table->string('action');
             $table->integer('inherit')->default(0);
-            $table->integer('edit_based')->default(0);
+            $table->integer('edit_based')->default(0)->unsigned();
             $table->string('name');
             $table->text('about')->nullable();
             $table->timestamps();
         });
+        /*
+        Schema::table('admin_actions', function (Blueprint $table) {
+            $table->foreign('controller_id')
+                  ->references('id')->on('admin_controllers')
+                  ->onDelete('cascade');
+        });
+        */
 
         $date = new Carbon;
 
@@ -731,7 +738,7 @@ class CreateAdminActions extends Migration
      */
     public function down()
     {
-
+        //
     }
 
 }

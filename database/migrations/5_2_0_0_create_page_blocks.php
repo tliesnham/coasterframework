@@ -27,6 +27,10 @@ class CreatePageBlocks extends Migration
             $table->foreign('block_id')
                   ->references('id')->on('blocks')
                   ->onDelete('cascade');
+
+            $table->foreign('language_id')
+                  ->references('id')->on('languages')
+                  ->onDelete('cascade');
         });
     }
 

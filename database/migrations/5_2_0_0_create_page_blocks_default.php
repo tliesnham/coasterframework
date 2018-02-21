@@ -18,7 +18,7 @@ class CreatePageBlocksDefault extends Migration
             $table->integer('language_id')->default(1)->unsigned();
             $table->integer('block_id')->unsigned();
             $table->text('content');
-            $table->integer('version');
+            $table->integer('version')->unsigned();
             $table->timestamps();
         });
 

@@ -17,7 +17,7 @@ class CreateMenuItems extends Migration
             $table->increments('id');
             $table->integer('menu_id')->unsigned();
             $table->integer('page_id')->unsigned();
-            $table->integer('order')->default(0);
+            $table->integer('order')->default(0)->unsigned();
             $table->integer('sub_levels')->default(0)->unsigned();
             $table->text('custom_name')->nullable();
             $table->timestamps();

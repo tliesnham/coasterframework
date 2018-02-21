@@ -17,8 +17,8 @@ class CreateAdminMenu extends Migration
         Schema::create('admin_menu', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('action_id')->unsigned();
-            $table->integer('parent');
-            $table->integer('order');
+            $table->integer('parent')->unsigned();
+            $table->integer('order')->unsigned();
             $table->string('icon');
             $table->string('item_name');
             $table->string('item_desc')->nullable();
